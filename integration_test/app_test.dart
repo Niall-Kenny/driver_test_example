@@ -1,6 +1,9 @@
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
+/// run with:
+/// flutter drive --driver=integration_test/app_test.dart --profile
+
 void main() {
   group('Scrollable App', () {
     late FlutterDriver driver;
@@ -28,14 +31,12 @@ void main() {
 
         expect(await driver.getText(itemFinder), 'Item 50');
       });
-
       // Convert the Timeline into a TimelineSummary that's easier to
       // read and understand.
       final summary = new TimelineSummary.summarize(timeline);
 
       // Then, save the summary to disk.
-      await summary.writeSummaryToFile('scrolling_summary', pretty: true);
-
+      // await summary.writeSummaryToFile('scrolling_summarddy', pretty: true);
       // Optionally, write the entire timeline to disk in a json format.
       // This file can be opened in the Chrome browser's tracing tools
       // found by navigating to chrome://tracing.
